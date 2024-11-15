@@ -11,7 +11,6 @@ import {
   HiOutlineCog,
   HiOutlineClipboardList,
   HiOutlineSupport,
-  HiOutlineUser,
   HiOutlineChevronRight,
   HiOutlineUserGroup,
   HiOutlineLockClosed,
@@ -25,7 +24,7 @@ interface NavItem {
   children?: {
     label: string;
     href: string;
-    icon: React.ReactNode;
+    icon?: React.ReactNode;
   }[];
 }
 
@@ -78,7 +77,7 @@ const navItems: NavItem[] = [
     children: [
       { label: "General", href: "/admin/settings/general" },
       { label: "Security", href: "/admin/settings/security" },
-      { label: "Customization", href: "/admin/settings/customization" },
+      // { label: "Customization", href: "/admin/settings/customization" },
     ],
   },
   {
@@ -86,15 +85,7 @@ const navItems: NavItem[] = [
     icon: <HiOutlineSupport className="w-5 h-5" />,
     children: [
       { label: "Tickets", href: "/admin/support/tickets" },
-      { label: "Knowledge Base", href: "/admin/support/knowledge-base" },
-    ],
-  },
-  {
-    label: "Profile",
-    icon: <HiOutlineUser className="w-5 h-5" />,
-    children: [
-      { label: "Settings", href: "/admin/profile" },
-      { label: "Security", href: "/admin/profile/security" },
+      // { label: "Knowledge Base", href: "/admin/support/knowledge-base" },
     ],
   },
 ];
