@@ -13,6 +13,9 @@ import {
   HiOutlineSupport,
   HiOutlineUser,
   HiOutlineChevronRight,
+  HiOutlineUserGroup,
+  HiOutlineLockClosed,
+  HiOutlineKey,
 } from "react-icons/hi";
 
 interface NavItem {
@@ -22,6 +25,7 @@ interface NavItem {
   children?: {
     label: string;
     href: string;
+    icon: React.ReactNode;
   }[];
 }
 
@@ -37,6 +41,27 @@ const navItems: NavItem[] = [
     children: [
       { label: "All Schools", href: "/admin/schools" },
       { label: "Add School", href: "/admin/schools/new" },
+    ],
+  },
+  {
+    label: "User Management",
+    icon: <HiOutlineUserGroup className="w-5 h-5" />,
+    children: [
+      {
+        label: "Administrators",
+        href: "/admin/users/administrators",
+        icon: <HiOutlineKey className="w-5 h-5" />,
+      },
+      {
+        label: "Roles & Permissions",
+        href: "/admin/users/roles",
+        icon: <HiOutlineLockClosed className="w-5 h-5" />,
+      },
+      {
+        label: "Activity Logs",
+        href: "/admin/users/logs",
+        icon: <HiOutlineClipboardList className="w-5 h-5" />,
+      },
     ],
   },
   {
@@ -174,7 +199,8 @@ export default function AdminSidebar() {
                               whileTap={{ scale: 0.98 }}
                             >
                               <div className="w-1.5 h-1.5 rounded-full bg-current mr-3" />
-                              <span>{child.label}</span>
+                              {child.icon}
+                              <span className="ml-2">{child.label}</span>
                             </motion.div>
                           </Link>
                         ))}

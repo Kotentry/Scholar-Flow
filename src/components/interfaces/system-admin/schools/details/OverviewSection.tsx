@@ -1,6 +1,7 @@
 'use client';
 
-import { Card, CardBody } from '@nextui-org/react';
+import { useState } from 'react';
+import { Card, CardBody, Button } from '@nextui-org/react';
 import {
   HiOutlineUserGroup,
   HiOutlineAcademicCap,
@@ -8,6 +9,8 @@ import {
   HiOutlineUsers,
   HiOutlineArrowUp,
   HiOutlineArrowDown,
+  HiOutlineBan,
+  HiOutlineCheck,
 } from 'react-icons/hi';
 import { formatNumber, formatPercentage, formatCurrency } from '@/lib/utils/formatters';
 
@@ -29,34 +32,34 @@ function MetricCard({
   subtitle,
   icon: Icon,
   trend,
-  formatter = formatNumber,
+  formatter = (val) => val.toString(),
 }: MetricCardProps) {
   return (
     <Card>
       <CardBody className="gap-2">
-        <div className="flex items-start justify-between">
+        <div className="flex items-center justify-between">
           <div className="p-2 rounded-lg bg-default-100">
             <Icon className="w-5 h-5" />
           </div>
           {trend && (
-            <div className={`flex items-center gap-1 text-small ${
-              trend.isPositive ? 'text-success' : 'text-danger'
-            }`}>
+            <div
+              className={`flex items-center gap-1 text-small ${
+                trend.isPositive ? 'text-success' : 'text-danger'
+              }`}
+            >
               {trend.isPositive ? (
                 <HiOutlineArrowUp className="w-4 h-4" />
               ) : (
                 <HiOutlineArrowDown className="w-4 h-4" />
               )}
-              <span>{formatPercentage(trend.value)}</span>
+              <span>{trend.value}%</span>
             </div>
           )}
         </div>
 
         <div className="flex flex-col">
           <span className="text-small text-default-500">{title}</span>
-          <span className="text-xl font-semibold">
-            {formatter(value)}
-          </span>
+          <span className="text-xl font-semibold">{formatter(value)}</span>
           <span className="text-tiny text-default-400">{subtitle}</span>
         </div>
       </CardBody>
@@ -68,7 +71,6 @@ interface OverviewSectionProps {
   studentMetrics: {
     totalStudents: number;
     newAdmissions: number;
-    graduationRate: number;
   };
   staffMetrics: {
     totalStaff: number;
@@ -76,24 +78,53 @@ interface OverviewSectionProps {
     staffAttendance: number;
   };
   financialMetrics: {
-    feeCollection: number;
     monthlyRevenue: number;
-    monthlyExpenses: number;
+    feeCollection: number;
   };
+  isActive?: boolean;
+  onToggleStatus?: () => void;
 }
 
 export default function OverviewSection({
   studentMetrics,
   staffMetrics,
   financialMetrics,
+  isActive = true,
+  onToggleStatus,
 }: OverviewSectionProps) {
+  const [active, setActive] = useState(isActive);
+
+  const handleToggleStatus = () => {
+    setActive(!active);
+    onToggleStatus?.();
+  };
+
   return (
     <section className="space-y-4">
-      <div className="flex flex-col gap-1">
-        <h2 className="text-xl font-semibold">Overview</h2>
-        <p className="text-default-500">
-          Key metrics and performance indicators
-        </p>
+      <div className="flex items-center justify-between">
+        <div className="flex flex-col gap-1">
+          <h2 className="text-xl font-semibold">Overview</h2>
+          <p className="text-default-500">
+            Key metrics and performance indicators
+          </p>
+        </div>
+        {onToggleStatus && (
+          <Button
+            color={active ? 'danger' : 'success'}
+            variant="flat"
+            onPress={handleToggleStatus}
+            startContent={
+              active ? (
+                <HiOutlineBan className="w-4 h-4" />
+              ) : (
+                <HiOutlineCheck className="w-4 h-4" />
+              )
+            }
+            className="font-medium"
+          >
+            {active ? 'Deactivate School' : 'Activate School'}
+          </Button>
+        )}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

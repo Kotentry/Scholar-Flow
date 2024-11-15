@@ -15,6 +15,9 @@ import ActivitySection from '@/components/interfaces/system-admin/schools/detail
 import SchoolInfoSection from '@/components/interfaces/system-admin/schools/details/SchoolInfoSection';
 
 export default function SchoolDetailsPage() {
+
+  
+
   return (
     <div className="space-y-8">
       {/* Back Button */}
@@ -30,11 +33,14 @@ export default function SchoolDetailsPage() {
       </Link>
 
       {/* Header */}
-      <div className="flex flex-col gap-1">
-        <h1 className="text-2xl font-bold">{schoolDetails.basicInfo.name}</h1>
-        <p className="text-default-500">
-          Comprehensive overview and management dashboard
-        </p>
+      <div className="flex items-center justify-between">
+        <div className="flex flex-col gap-1">
+          <h1 className="text-2xl font-bold">{schoolDetails.basicInfo.name}</h1>
+          <p className="text-default-500">
+            Comprehensive overview and management dashboard
+          </p>
+        </div>
+       
       </div>
 
       <Divider />
