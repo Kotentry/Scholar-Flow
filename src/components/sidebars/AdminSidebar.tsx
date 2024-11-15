@@ -68,7 +68,7 @@ const navItems: NavItem[] = [
     label: "Analytics",
     icon: <HiOutlineChartBar className="w-5 h-5" />,
     children: [
-      { label: "Overview", href: "/admin/analytics" },
+      { label: "Overview", href: "/admin/analytics/overview" },
       { label: "Reports", href: "/admin/analytics/reports" },
     ],
   },
@@ -80,11 +80,6 @@ const navItems: NavItem[] = [
       { label: "Security", href: "/admin/settings/security" },
       { label: "Customization", href: "/admin/settings/customization" },
     ],
-  },
-  {
-    label: "Audit Logs",
-    icon: <HiOutlineClipboardList className="w-5 h-5" />,
-    href: "/admin/audit-logs",
   },
   {
     label: "Support Center",
