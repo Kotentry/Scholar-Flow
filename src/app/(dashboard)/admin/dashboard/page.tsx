@@ -8,10 +8,10 @@ import {
   HiOutlineAcademicCap,
   HiOutlineClipboardCheck,
 } from "react-icons/hi";
-import StatCard from "@/components/dashboard/StatCard";
-import ActivityFeed from "@/components/dashboard/ActivityFeed";
-import SchoolChart from "@/components/dashboard/SchoolChart";
-import QuickActions from "@/components/dashboard/QuickActions";
+import StatCard from "@/components/interfaces/system-admin/dashboard/StatCard";
+import ActivityFeed from "@/components/interfaces/system-admin/dashboard/ActivityFeed";
+import SchoolChart from "@/components/interfaces/system-admin/dashboard/SchoolChart";
+import QuickActions from "@/components/interfaces/system-admin/dashboard/QuickActions";
 import {
   schoolStats,
   performanceMetrics,
@@ -82,7 +82,7 @@ export default function AdminDashboard() {
           transition={{ delay: 0.1 }}
           className="text-default-500"
         >
-          Here's what's happening with your schools today.
+          Here&apos;s what&apos;s happening with your schools today.
         </motion.p>
       </div>
 
