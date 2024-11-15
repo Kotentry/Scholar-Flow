@@ -3,7 +3,30 @@
 import { motion } from "framer-motion";
 import { HiOutlineAcademicCap } from "react-icons/hi";
 
-export default function AnimatedLogo() {
+interface AnimatedLogoProps {
+  size?: "xs" | "sm" | "md" | "lg";
+}
+
+const sizeClasses = {
+  xs: {
+    text: "text-lg md:text-xl",
+    icon: "text-lg md:text-xl -top-4",
+  },
+  sm: {
+    text: "text-2xl md:text-3xl",
+    icon: "text-xl md:text-2xl -top-4",
+  },
+  md: {
+    text: "text-4xl md:text-5xl",
+    icon: "text-3xl md:text-4xl -top-6",
+  },
+  lg: {
+    text: "text-5xl md:text-6xl",
+    icon: "text-4xl md:text-5xl -top-8",
+  },
+};
+
+export default function AnimatedLogo({ size = "md" }: AnimatedLogoProps) {
   const letterVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
@@ -37,6 +60,7 @@ export default function AnimatedLogo() {
   };
 
   const words = ["Scholar", "Flow"];
+  const { text: textSize, icon: iconSize } = sizeClasses[size];
 
   return (
     <motion.div 
@@ -50,11 +74,11 @@ export default function AnimatedLogo() {
             key={i}
             custom={i}
             variants={letterVariants}
-            className={`text-4xl md:text-5xl font-bold ${char === 'l' ? 'relative' : ''}`}
+            className={`${textSize} font-bold ${char === 'l' ? 'relative' : ''}`}
           >
             {char === 'l' && (
               <motion.span
-                className="absolute -top-6 -right-1 text-3xl md:text-4xl text-primary"
+                className={`absolute -right-1 ${iconSize} text-primary`}
                 variants={capVariants}
                 animate="float"
               >
@@ -71,7 +95,7 @@ export default function AnimatedLogo() {
             key={i}
             custom={i + words[0].length}
             variants={letterVariants}
-            className="text-4xl md:text-5xl font-bold"
+            className={`${textSize} font-bold`}
           >
             {char}
           </motion.span>

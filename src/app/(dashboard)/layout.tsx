@@ -6,11 +6,8 @@ export default function DashboardLayout({
   children: ReactNode
 }) {
   return (
-    <div className="min-h-screen bg-gray-100">
-      {/* Add Sidebar and Header components here */}
-      <main className="ml-64 pt-16">
+    <main className="min-h-screen bg-gray-100">
         {children}
-      </main>
-    </div>
+    </main>
   )
 }
