@@ -5,6 +5,7 @@ import { HiOutlineAcademicCap } from "react-icons/hi";
 
 interface AnimatedLogoProps {
   size?: "xs" | "sm" | "md" | "lg";
+  color?: "black" | "white";
 }
 
 const sizeClasses = {
@@ -26,7 +27,7 @@ const sizeClasses = {
   },
 };
 
-export default function AnimatedLogo({ size = "md" }: AnimatedLogoProps) {
+export default function AnimatedLogo({ size = "md", color = "black" }: AnimatedLogoProps) {
   const letterVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
@@ -61,6 +62,7 @@ export default function AnimatedLogo({ size = "md" }: AnimatedLogoProps) {
 
   const words = ["Scholar", "Flow"];
   const { text: textSize, icon: iconSize } = sizeClasses[size];
+  const textColor = color === "white" ? "text-white" : "text-zinc-900";
 
   return (
     <motion.div 
@@ -74,11 +76,11 @@ export default function AnimatedLogo({ size = "md" }: AnimatedLogoProps) {
             key={i}
             custom={i}
             variants={letterVariants}
-            className={`${textSize} font-bold ${char === 'l' ? 'relative' : ''}`}
+            className={`${textSize} font-bold ${textColor} ${char === 'l' ? 'relative' : ''}`}
           >
             {char === 'l' && (
               <motion.span
-                className={`absolute -right-1 ${iconSize} text-primary`}
+                className={`absolute -right-1 ${iconSize} ${color === "white" ? "text-white" : "text-primary"}`}
                 variants={capVariants}
                 animate="float"
               >
@@ -95,7 +97,7 @@ export default function AnimatedLogo({ size = "md" }: AnimatedLogoProps) {
             key={i}
             custom={i + words[0].length}
             variants={letterVariants}
-            className={`${textSize} font-bold`}
+            className={`${textSize} font-bold ${textColor}`}
           >
             {char}
           </motion.span>

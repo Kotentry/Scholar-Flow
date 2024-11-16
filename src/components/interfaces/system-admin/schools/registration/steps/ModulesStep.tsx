@@ -1,7 +1,7 @@
 'use client';
 
 import { useFormContext } from 'react-hook-form';
-import { Card, CardBody, Chip, Button } from '@nextui-org/react';
+import { Card, CardBody, Chip } from '@nextui-org/react';
 import { type SchoolRegistrationData } from '@/lib/types/school-registration';
 import { moduleConfig } from '@/lib/schemas/school-registration';
 import {

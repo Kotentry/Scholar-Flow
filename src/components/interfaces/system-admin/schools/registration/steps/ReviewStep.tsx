@@ -13,7 +13,7 @@ import {
   HiOutlineCube,
 } from 'react-icons/hi';
 import { type SchoolRegistrationData } from '@/lib/types/school-registration';
-import { availableModules } from '../steps/ModulesStep';
+import availableModules  from '../steps/ModulesStep';
 
 interface InfoItemProps {
   icon: React.ElementType;

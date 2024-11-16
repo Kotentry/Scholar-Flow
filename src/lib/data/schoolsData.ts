@@ -4,6 +4,9 @@ export interface School {
   type: 'primary' | 'secondary' | 'tertiary';
   status: 'active' | 'pending' | 'inactive' | 'suspended';
   isActive: boolean;
+  logo: string;
+  description: string;
+  features: string[];
   location: {
     address: string;
     city: string;
@@ -30,113 +33,95 @@ export interface School {
 export const schools: School[] = [
   {
     id: '1',
-    name: "St. Mary's International School",
+    name: 'Cambridge International School',
     type: 'secondary',
     status: 'active',
     isActive: true,
+    logo: 'https://images.unsplash.com/photo-1592280771190-3e2e4d571952?w=800&auto=format&fit=crop&q=60',
+    description: 'A leading international school providing world-class education with a focus on academic excellence and personal development.',
+    features: ['International Curriculum', 'Advanced Labs', 'Sports Complex', 'Arts Center'],
     location: {
-      address: '123 Independence Avenue',
-      city: 'Accra',
-      state: 'Greater Accra',
-      country: 'Ghana',
+      address: '123 Education Drive',
+      city: 'Lagos',
+      state: 'Lagos',
+      country: 'Nigeria'
     },
     contact: {
-      email: 'info@stmarys.edu.gh',
-      phone: '+233 20 123 4567',
-      website: 'https://stmarys.edu.gh',
-      adminName: 'Mrs. Sarah Owusu',
-      adminEmail: 'admin@stmarys.edu.gh',
-      adminPhone: '+233 20 123 4569',
-    },
-    metrics: {
-      totalStudents: 980,
-      totalTeachers: 65,
-      classrooms: 45,
-      performanceIndex: 92,
-    },
-    lastActive: '2023-11-20T08:30:00Z',
-  },
-  {
-    id: '2',
-    name: 'Cambridge International Academy',
-    type: 'primary',
-    status: 'active',
-    isActive: true,
-    location: {
-      address: '456 Liberation Road',
-      city: 'Kumasi',
-      state: 'Ashanti',
-      country: 'Ghana',
-    },
-    contact: {
-      email: 'info@cambridgeacademy.edu.gh',
-      phone: '+233 20 234 5678',
-      website: 'https://cambridgeacademy.edu.gh',
-      adminName: 'Mr. John Addo',
-      adminEmail: 'admin@cambridgeacademy.edu.gh',
-      adminPhone: '+233 20 234 5679',
-    },
-    metrics: {
-      totalStudents: 650,
-      totalTeachers: 45,
-      classrooms: 30,
-      performanceIndex: 88,
-    },
-    lastActive: '2023-11-20T09:15:00Z',
-  },
-  {
-    id: '3',
-    name: 'Victory College',
-    type: 'tertiary',
-    status: 'pending',
-    isActive: false,
-    location: {
-      address: '789 University Avenue',
-      city: 'Cape Coast',
-      state: 'Central',
-      country: 'Ghana',
-    },
-    contact: {
-      email: 'info@victorycollege.edu.gh',
-      phone: '+233 20 345 6789',
-      adminName: 'Dr. Emmanuel Koffi',
-      adminEmail: 'admin@victorycollege.edu.gh',
-      adminPhone: '+233 20 345 6780',
+      email: 'info@cambridge.edu.ng',
+      phone: '+234 123 456 7890',
+      website: 'www.cambridge.edu.ng',
+      adminName: 'Dr. James Wilson',
+      adminEmail: 'admin@cambridge.edu.ng',
+      adminPhone: '+234 123 456 7891'
     },
     metrics: {
       totalStudents: 1200,
-      totalTeachers: 85,
-      classrooms: 60,
-      performanceIndex: 85,
+      totalTeachers: 80,
+      classrooms: 45,
+      performanceIndex: 92
     },
-    lastActive: '2023-11-19T14:45:00Z',
+    lastActive: '2024-03-20'
   },
   {
-    id: '4',
-    name: 'Royal Academy',
-    type: 'secondary',
-    status: 'inactive',
-    isActive: false,
+    id: '2',
+    name: 'St. Mary\'s Primary School',
+    type: 'primary',
+    status: 'active',
+    isActive: true,
+    logo: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&auto=format&fit=crop&q=60',
+    description: 'Nurturing young minds with a balanced approach to education, focusing on academic excellence and character development.',
+    features: ['Modern Library', 'Play Areas', 'Music Room', 'Computer Lab'],
     location: {
-      address: '321 Royal Street',
-      city: 'Tamale',
-      state: 'Northern',
-      country: 'Ghana',
+      address: '45 Church Street',
+      city: 'Abuja',
+      state: 'FCT',
+      country: 'Nigeria'
     },
     contact: {
-      email: 'info@royalacademy.edu.gh',
-      phone: '+233 20 456 7890',
-      website: 'https://royalacademy.edu.gh',
-      adminName: 'Mrs. Grace Mensah',
-      adminEmail: 'admin@royalacademy.edu.gh',
-      adminPhone: '+233 20 456 7891',
+      email: 'info@stmarys.edu.ng',
+      phone: '+234 123 456 7892',
+      website: 'www.stmarys.edu.ng',
+      adminName: 'Mrs. Sarah Johnson',
+      adminEmail: 'admin@stmarys.edu.ng',
+      adminPhone: '+234 123 456 7893'
     },
     metrics: {
-      totalStudents: 420,
-      totalTeachers: 35,
+      totalStudents: 600,
+      totalTeachers: 40,
       classrooms: 25,
-      performanceIndex: 78,
+      performanceIndex: 88
     },
-    lastActive: '2023-11-18T16:20:00Z',
+    lastActive: '2024-03-19'
   },
+  {
+    id: '3',
+    name: 'Tech University of Innovation',
+    type: 'tertiary',
+    status: 'active',
+    isActive: true,
+    logo: 'https://images.unsplash.com/photo-1562774053-701939374585?w=800&auto=format&fit=crop&q=60',
+    description: 'A modern university focused on technology, innovation, and entrepreneurship, preparing students for the digital age.',
+    features: ['Research Centers', 'Innovation Hub', 'Tech Incubator', 'Digital Library'],
+    location: {
+      address: '789 Innovation Avenue',
+      city: 'Port Harcourt',
+      state: 'Rivers',
+      country: 'Nigeria'
+    },
+    contact: {
+      email: 'info@techuni.edu.ng',
+      phone: '+234 123 456 7894',
+      website: 'www.techuni.edu.ng',
+      adminName: 'Prof. David Okonkwo',
+      adminEmail: 'admin@techuni.edu.ng',
+      adminPhone: '+234 123 456 7895'
+    },
+    metrics: {
+      totalStudents: 5000,
+      totalTeachers: 300,
+      classrooms: 120,
+      performanceIndex: 95
+    },
+    lastActive: '2024-03-18'
+  }
 ];
