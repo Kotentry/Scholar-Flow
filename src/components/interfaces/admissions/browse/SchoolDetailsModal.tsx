@@ -17,10 +17,9 @@ interface SchoolDetailsModalProps {
   school: School;
   isOpen: boolean;
   onClose: () => void;
-  onApply: () => void;
 }
 
-export function SchoolDetailsModal({ school, isOpen, onClose, onApply }: SchoolDetailsModalProps) {
+export function SchoolDetailsModal({ school, isOpen, onClose }: SchoolDetailsModalProps) {
   const features = [
     { icon: <FaChalkboardTeacher />, label: "Experienced Faculty" },
     { icon: <FaBook />, label: "Modern Curriculum" },
@@ -166,16 +165,6 @@ export function SchoolDetailsModal({ school, isOpen, onClose, onApply }: SchoolD
                 className="flex-1"
               >
                 Close
-              </Button>
-              <Button 
-                color="primary"
-                onPress={() => {
-                  onClose();
-                  onApply();
-                }}
-                className="flex-1 bg-zinc-900"
-              >
-                Apply Now
               </Button>
             </ModalFooter>
           </>
