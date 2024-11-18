@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Card, CardBody, CardHeader } from "@nextui-org/react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { AttendanceData } from "@/components/interfaces/school/dashboard";
+import { AttendanceData } from "@/lib/types/dashboard";
 
 interface AttendanceChartProps {
   data: AttendanceData[];

@@ -1,11 +1,11 @@
 import { Suspense } from "react";
-import StatsCard from "@/components/school/dashboard/StatsCard";
-import AttendanceChart from "@/components/school/dashboard/AttendanceChart";
-import PerformanceChart from "@/components/school/dashboard/PerformanceChart";
-import RevenueChart from "@/components/school/dashboard/RevenueChart";
-import ActivityList from "@/components/school/dashboard/ActivityList";
-import EventList from "@/components/school/dashboard/EventList";
-import CalendarWidget from "@/components/school/dashboard/CalendarWidget";
+import StatsCard from "@/components/interfaces/school/dashboard/StatsCard";
+import AttendanceChart from "@/components/interfaces/school/dashboard/AttendanceChart";
+import PerformanceChart from "@/components/interfaces/school/dashboard/PerformanceChart";
+import RevenueChart from "@/components/interfaces/school/dashboard/RevenueChart";
+import ActivityList from "@/components/interfaces/school/dashboard/ActivityList";
+import EventList from "@/components/interfaces/school/dashboard/EventList";
+import CalendarWidget from "@/components/interfaces/school/dashboard/CalendarWidget";
 import { schoolDashboardData } from "@/lib/data/school-dashboard";
 
 export default function SchoolDashboard() {

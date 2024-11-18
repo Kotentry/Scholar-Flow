@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Card, CardBody, CardHeader, Chip } from "@nextui-org/react";
-import { ActivityLog } from "@/components/interfaces/school/dashboard";
+import { ActivityLog } from "@/lib/types/dashboard";
 import { format } from "date-fns";
 
 interface ActivityListProps {

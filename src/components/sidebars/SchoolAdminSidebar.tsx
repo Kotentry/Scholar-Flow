@@ -42,7 +42,7 @@ const navItems: NavItem[] = [
     children: [
       { label: "Applications", href: "/school/admissions/applications" },
       { label: "Interviews", href: "/school/admissions/interviews" },
-      { label: "Enrollment", href: "/school/admissions/enrollment" },
+      { label: "Enrollment", href: "/school/admissions/enrollments" },
     ],
   },
   {

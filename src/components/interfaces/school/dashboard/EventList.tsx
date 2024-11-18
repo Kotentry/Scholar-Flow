@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Card, CardBody, CardHeader, Chip } from "@nextui-org/react";
-import { UpcomingEvent } from "@/components/interfaces/school/dashboard";
+import { UpcomingEvent } from "@/lib/types/dashboard";
 import { format } from "date-fns";
 
 interface EventListProps {

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Card, CardBody, CardHeader, Chip } from "@nextui-org/react";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { RevenueData } from "@/components/interfaces/school/dashboard";
+import { RevenueData } from "@/lib/types/dashboard";
 
 interface RevenueChartProps {
   data: RevenueData[];

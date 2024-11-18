@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Card, CardBody, CardHeader } from "@nextui-org/react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { PerformanceData } from "@/components/interfaces/school/dashboard";
+import { PerformanceData } from "@/lib/types/dashboard";
 
 interface PerformanceChartProps {
   data: PerformanceData[];

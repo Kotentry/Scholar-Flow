@@ -1,4 +1,4 @@
-import { DashboardData } from "@/components/interfaces/school/dashboard";
+import { DashboardData } from "@/lib/types/dashboard";
 
 export const schoolDashboardData: DashboardData = {
   stats: {

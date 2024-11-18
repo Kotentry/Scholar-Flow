@@ -1,6 +1,6 @@
-import { UserRole } from "@/types/auth.types";
+import { UserRoleType } from "@/types/auth.types";
 
-export const redirectMap: Record<UserRole, string> = {
+export const redirectMap: Record<UserRoleType, string> = {
   ADMIN: "/admin/dashboard",
   SCHOOL_ADMIN: "/school/dashboard",
   TEACHER: "/teacher/dashboard",
@@ -13,6 +13,6 @@ export const authRoutes = ["/login", "/register"] as const;
 export const protectedRoutes = ["/dashboard", "/profile"] as const;
 
 // Helper function to get dashboard route by role
-export const getDashboardRoute = (role: UserRole): string => {
+export const getDashboardRoute = (role: UserRoleType): string => {
   return redirectMap[role];
 };

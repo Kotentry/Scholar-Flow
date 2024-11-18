@@ -1,6 +1,6 @@
-import { UserRole } from "@/types/auth.types";
+import { UserRoleType } from "@/types/auth.types";
 
-export const redirectMap: Record<UserRole, string> = {
+export const redirectMap: Record<UserRoleType, string> = {
   ADMIN: "/admin/dashboard",
   SCHOOL_ADMIN: "/school/dashboard",
   TEACHER: "/teacher/dashboard",

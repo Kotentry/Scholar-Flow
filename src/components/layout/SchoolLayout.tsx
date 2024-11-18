@@ -87,7 +87,7 @@ export default function SchoolLayout({ children }: SchoolLayoutProps) {
   ];
 
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
+    <div className="min-h-screen bg-background">
       <Header 
         onMenuClick={() => setIsSidebarOpen(!isSidebarOpen)}
         isSidebarOpen={isSidebarOpen}
@@ -137,11 +137,23 @@ export default function SchoolLayout({ children }: SchoolLayoutProps) {
             ease: "easeInOut"
           }}
         >
-          <div className="p-6">
+          <>
             {children}
-          </div>
+          </>
         </motion.main>
       </div>
     </div>
+    // <>
+    // <Header
+    //   onMenuClick={() => setIsSidebarOpen(!isSidebarOpen)}
+    //   isSidebarOpen={isSidebarOpen}
+    //   notifications={notifications}
+    //   user={user}
+    //   logoSize="sm"
+    // />
+    // <div>
+    // {children}
+    // </div>
+    // </>
   );
 }
