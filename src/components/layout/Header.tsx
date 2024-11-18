@@ -117,7 +117,7 @@ export default function Header({
                 className="relative"
               >
                 <Badge 
-                  content={notifications.length > 0 ? notifications.length : ""}
+                  content={notifications?.length > 0 ? notifications.length : ""}
                   color="primary"
                   shape="circle"
                   size="sm"
@@ -133,7 +133,7 @@ export default function Header({
                 base: "gap-4",
               }}
             >
-              {notifications.map((notification) => (
+              {notifications?.map((notification) => (
                 <DropdownItem
                   key={notification.id}
                   description={notification.message}
@@ -143,10 +143,8 @@ export default function Header({
                     title: "font-semibold",
                   }}
                 >
-                  <div className="flex flex-col gap-1">
-                    <span>{notification.title}</span>
-                    <span className="text-xs text-default-500">{notification.time}</span>
-                  </div>
+                  {notification.title}
+                  <div className="text-xs text-default-500">{notification.time}</div>
                 </DropdownItem>
               ))}
             </DropdownMenu>

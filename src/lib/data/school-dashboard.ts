@@ -1,0 +1,98 @@
+import { DashboardData } from "@/components/interfaces/school/dashboard";
+
+export const schoolDashboardData: DashboardData = {
+  stats: {
+    totalStudents: 1250,
+    totalTeachers: 85,
+    totalClasses: 45,
+    totalRevenue: 2500000,
+    attendanceRate: 92,
+    performanceRate: 87,
+  },
+  attendanceData: [
+    { date: "Mon", students: 95, teachers: 98 },
+    { date: "Tue", students: 92, teachers: 100 },
+    { date: "Wed", students: 88, teachers: 97 },
+    { date: "Thu", students: 94, teachers: 99 },
+    { date: "Fri", students: 91, teachers: 98 },
+  ],
+  performanceData: [
+    { subject: "Mathematics", score: 85, average: 78 },
+    { subject: "Science", score: 82, average: 75 },
+    { subject: "English", score: 88, average: 80 },
+    { subject: "History", score: 90, average: 82 },
+    { subject: "Geography", score: 86, average: 79 },
+  ],
+  revenueData: [
+    { month: "Jan", revenue: 210000, expenses: 180000 },
+    { month: "Feb", revenue: 220000, expenses: 175000 },
+    { month: "Mar", revenue: 215000, expenses: 185000 },
+    { month: "Apr", revenue: 225000, expenses: 178000 },
+    { month: "May", revenue: 218000, expenses: 182000 },
+    { month: "Jun", revenue: 228000, expenses: 188000 },
+  ],
+  recentActivities: [
+    {
+      id: "1",
+      type: "academic",
+      title: "Mid-Term Exams Scheduled",
+      description: "Mid-term examinations have been scheduled for next week",
+      timestamp: "2024-01-20T09:00:00",
+      priority: "high",
+    },
+    {
+      id: "2",
+      type: "administrative",
+      title: "New Teacher Onboarding",
+      description: "Three new teachers joined the Science department",
+      timestamp: "2024-01-19T14:30:00",
+      priority: "medium",
+    },
+    {
+      id: "3",
+      type: "financial",
+      title: "Fee Collection Update",
+      description: "85% of students have completed their fee payments",
+      timestamp: "2024-01-19T11:15:00",
+      priority: "medium",
+    },
+    {
+      id: "4",
+      type: "general",
+      title: "Sports Day Announcement",
+      description: "Annual sports day will be held next month",
+      timestamp: "2024-01-18T16:45:00",
+      priority: "low",
+    },
+  ],
+  upcomingEvents: [
+    {
+      id: "1",
+      title: "Parent-Teacher Meeting",
+      date: "2024-02-01",
+      type: "meeting",
+      description: "Quarterly parent-teacher meeting for all classes",
+    },
+    {
+      id: "2",
+      title: "Science Exhibition",
+      date: "2024-02-05",
+      type: "event",
+      description: "Annual science exhibition showcasing student projects",
+    },
+    {
+      id: "3",
+      title: "Mid-Term Examinations",
+      date: "2024-02-10",
+      type: "exam",
+      description: "Mid-term examinations for all classes",
+    },
+    {
+      id: "4",
+      title: "Founders Day",
+      date: "2024-02-15",
+      type: "holiday",
+      description: "School holiday in celebration of Founders Day",
+    },
+  ],
+};
