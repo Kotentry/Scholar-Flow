@@ -49,11 +49,11 @@ const navItems: NavItem[] = [
     label: "Academic",
     icon: <HiOutlineAcademicCap className="w-5 h-5" />,
     children: [
+      { label: "Teachers", href: "/school/academic/teachers" },
+      { label: "Students", href: "/school/academic/students" },
       { label: "Classes", href: "/school/academic/classes" },
       { label: "Subjects", href: "/school/academic/subjects" },
       { label: "Timetable", href: "/school/academic/timetable" },
-      { label: "Examinations", href: "/school/academic/examinations" },
-      { label: "Assignments", href: "/school/academic/assignments" },
     ],
   },
   {
