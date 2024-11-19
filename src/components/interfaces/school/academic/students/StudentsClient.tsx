@@ -8,6 +8,7 @@ import StudentList from './StudentList';
 import StudentDetail from './StudentDetail';
 import CreateStudentForm from './CreateStudentForm';
 import { Card, Button } from '@nextui-org/react';
+import { HiOutlinePlusCircle } from 'react-icons/hi';
 
 // Mock data for academic students
 const mockStudents: AcademicStudent[] = [
@@ -201,6 +202,7 @@ export default function StudentsClient() {
         <h1 className="text-2xl font-bold">Students</h1>
         <Button 
           onPress={() => setIsCreateOpen(true)}
+          startContent={<HiOutlinePlusCircle className="text-xl" />}
           className="bg-black text-white"
         >
           Add Student

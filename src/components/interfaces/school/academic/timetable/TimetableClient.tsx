@@ -6,6 +6,7 @@ import TimetableStats from "./TimetableStats";
 import TimetableFilters from "./TimetableFilters";
 import TimetableGrid from "./TimetableGrid";
 import CreateTimetableForm from "./CreateTimetableForm";
+import { HiOutlinePlusCircle } from "react-icons/hi";
 
 // Mock data
 const mockTimetable = {
@@ -77,6 +78,7 @@ export default function TimetableClient() {
         <Button 
           onPress={onOpen}
           className="bg-black text-white"
+          startContent={<HiOutlinePlusCircle className="text-xl" />}
         >
           Create Timetable
         </Button>

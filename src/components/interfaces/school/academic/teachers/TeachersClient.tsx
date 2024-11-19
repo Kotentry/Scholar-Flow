@@ -7,6 +7,7 @@ import TeacherList from "./TeacherList";
 import TeacherStats from "./TeacherStats";
 import TeacherFilters from "./TeacherFilters";
 import CreateTeacherForm from "./CreateTeacherForm";
+import { HiOutlinePlusCircle } from "react-icons/hi";
 
 const mockTeachers: Teacher[] = [
   {
@@ -117,6 +118,7 @@ export default function TeachersClient() {
         <h1 className="text-2xl font-bold">Teachers</h1>
         <Button 
           onPress={onOpen}
+          startContent={<HiOutlinePlusCircle className="text-xl" />}
           className="bg-black text-white"
         >
           Add Teacher

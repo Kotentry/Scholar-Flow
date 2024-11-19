@@ -6,6 +6,7 @@ import SubjectStats from "./SubjectStats";
 import SubjectFilters from "./SubjectFilters";
 import SubjectList from "./SubjectList";
 import CreateSubjectForm from "./CreateSubjectForm";
+import { HiOutlinePlusCircle } from "react-icons/hi";
 
 // Mock data
 const mockSubjects = [
@@ -72,6 +73,7 @@ export default function SubjectsClient() {
         <h1 className="text-2xl font-bold">Subjects</h1>
         <Button 
           onPress={onOpen}
+          startContent={<HiOutlinePlusCircle className="text-xl" />}
           className="bg-black text-white"
         >
           Add Subject
